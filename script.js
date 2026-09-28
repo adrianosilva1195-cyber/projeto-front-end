@@ -1,0 +1,11 @@
+const menuToggle=document.querySelector(".menu-toggle");
+const navLinks=document.querySelector("#menu-principal");
+const themeToggle=document.querySelector("#theme-toggle");
+const filters=document.querySelectorAll(".filter");
+const cards=document.querySelectorAll(".card");
+const form=document.querySelector("#reservation-form");
+const message=document.querySelector("#form-message");
+menuToggle.addEventListener("click",()=>{const open=menuToggle.getAttribute("aria-expanded")==="true";menuToggle.setAttribute("aria-expanded",String(!open));navLinks.classList.toggle("open",!open);});
+themeToggle.addEventListener("click",()=>{document.body.classList.toggle("dark");const dark=document.body.classList.contains("dark");themeToggle.textContent=dark?"Modo claro":"Modo escuro";themeToggle.setAttribute("aria-label",dark?"Ativar modo claro":"Ativar modo escuro");});
+filters.forEach(filter=>filter.addEventListener("click",()=>{filters.forEach(item=>item.classList.remove("active"));filter.classList.add("active");const category=filter.dataset.category;cards.forEach(card=>{card.hidden=category!=="todos"&&card.dataset.category!==category;});}));
+form.addEventListener("submit",event=>{event.preventDefault();if(!form.checkValidity()){message.textContent="Preencha todos os campos corretamente.";form.reportValidity();return;}const name=document.querySelector("#nome").value.trim();message.textContent="Reserva de "+name+" registada com sucesso!";form.reset();});
