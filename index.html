@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sabor & Arte — restaurante com menu e reservas.">
+<title>Sabor & Arte | Restaurante</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
+<header class="site-header">
+<nav class="nav container" aria-label="Navegação principal">
+<a class="logo" href="#inicio" aria-label="Sabor & Arte - início">Sabor & Arte</a>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">Menu</button>
+<div id="menu-principal" class="nav-links">
+<a href="#inicio">Início</a><a href="#menu">Menu</a><a href="#reserva">Reserva</a><a href="#contacto">Contacto</a>
+<button id="theme-toggle" class="theme-btn" type="button">Modo escuro</button>
+</div>
+</nav>
+</header>
+<main id="conteudo">
+<section id="inicio" class="hero" aria-labelledby="titulo-principal"><div class="container hero-content">
+<p class="eyebrow">Cozinha contemporânea</p><h1 id="titulo-principal">Sabor que transforma cada momento.</h1>
+<p>Ingredientes selecionados, ambiente acolhedor e pratos preparados para tornar a sua experiência especial.</p>
+<a class="button" href="#reserva">Fazer uma reserva</a>
+</div></section>
+<section id="menu" class="section container" aria-labelledby="titulo-menu">
+<div class="section-heading"><p class="eyebrow">Conheça</p><h2 id="titulo-menu">Nosso menu</h2></div>
+<div class="filters" role="group" aria-label="Filtrar menu">
+<button class="filter active" type="button" data-category="todos">Todos</button>
+<button class="filter" type="button" data-category="principais">Principais</button>
+<button class="filter" type="button" data-category="sobremesas">Sobremesas</button>
+<button class="filter" type="button" data-category="bebidas">Bebidas</button>
+</div>
+<div id="menu-grid" class="menu-grid">
+<article class="card" data-category="principais"><div class="card-icon" aria-hidden="true">🍝</div><h3>Fettuccine da Casa</h3><p>Massa fresca, molho cremoso e ervas.</p><strong>R$ 39,90</strong></article>
+<article class="card" data-category="principais"><div class="card-icon" aria-hidden="true">🥩</div><h3>Filé ao Molho</h3><p>Filé grelhado, molho especial e legumes.</p><strong>R$ 54,90</strong></article>
+<article class="card" data-category="sobremesas"><div class="card-icon" aria-hidden="true">🍰</div><h3>Cheesecake</h3><p>Cheesecake artesanal com calda de frutas.</p><strong>R$ 19,90</strong></article>
+<article class="card" data-category="bebidas"><div class="card-icon" aria-hidden="true">🥤</div><h3>Suco Natural</h3><p>Frutas selecionadas, preparado na hora.</p><strong>R$ 9,90</strong></article>
+</div></section>
+<section id="reserva" class="section section-alt" aria-labelledby="titulo-reserva"><div class="container">
+<div class="section-heading"><p class="eyebrow">Reserve sua mesa</p><h2 id="titulo-reserva">Faça sua reserva</h2></div>
+<form id="reservation-form" class="form" novalidate>
+<div class="field"><label for="nome">Nome</label><input id="nome" name="nome" type="text" autocomplete="name" required></div>
+<div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+<div class="field"><label for="data">Data</label><input id="data" name="data" type="date" required></div>
+<div class="field"><label for="pessoas">Número de pessoas</label><input id="pessoas" name="pessoas" type="number" min="1" max="12" required></div>
+<button class="button" type="submit">Confirmar reserva</button><p id="form-message" class="form-message" role="status" aria-live="polite"></p>
+</form></div></section>
+<section id="contacto" class="section container" aria-labelledby="titulo-contacto"><div class="section-heading"><p class="eyebrow">Fale connosco</p><h2 id="titulo-contacto">Contacto</h2></div>
+<div class="contact-grid"><div><strong>Morada</strong><p>Rua das Flores, 100 — São Paulo/SP</p></div><div><strong>Horário</strong><p>Terça a domingo, 11h às 23h</p></div><div><strong>Telefone</strong><p>(11) 99999-9999</p></div></div>
+</section></main>
+<footer class="footer"><div class="container"><p>© 2026 Sabor & Arte. Projeto académico de Front-End.</p></div></footer>
+<script src="script.js"></script>
+</body></html>
